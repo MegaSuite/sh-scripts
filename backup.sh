@@ -27,7 +27,7 @@ CURRENT_DATE=$(date "+%Y%m%d_%H%M%S")
 FILE_NAME=${FILE_PREFIX}_${CURRENT_DATE}.${ARCHIVE_FORMAT}
 
 # compress
-tar -C "${SRC_DIR}" --exclude=${EXCLUDED} -czf "${FILE_NAME}" ${INCLUDED}
+tar -C "${SRC_DIR}" ${EXCLUDED} -czf "${FILE_NAME}" ${INCLUDED}
 
 # transfer
 scp -P "${SSH_PORT}" "${FILE_NAME}" "${SSH_USER}@${BACKUP_SERVER}:${DST_DIR}"
