@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create and navigate to the Realm directory
-apt install sudo -y
+apt install sudo curl -y
 mkdir -p Realm && cd Realm
 
 # Fetch the latest version number
