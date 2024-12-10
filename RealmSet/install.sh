@@ -62,5 +62,5 @@ sudo systemctl enable realm
 echo "Waiting for 10 seconds before starting the realm service..."
 sleep 10
 sudo systemctl start realm
-
-echo "Realm service has been started."
+sleep 5
+sudo systemctl status realm
