@@ -2,7 +2,7 @@
 
 # Create and navigate to the Realm directory
 apt install sudo curl -y
-mkdir -p Realm && cd Realm
+mkdir -p realm && cd realm
 
 # Fetch the latest version number
 VERSION=$(curl -s https://api.github.com/repos/zhboner/realm/releases/latest | grep 'tag_name' | cut -d\" -f4)
@@ -33,7 +33,7 @@ read -p "Enter the remote port: " REMOTE_PORT
 cat << EOL >> config.toml
 
 [[endpoints]]
-listen = "0.0.0.0:${LISTEN_PORT}"
+listen = "[::]:${LISTEN_PORT}"
 remote = "${REMOTE_IP}:${REMOTE_PORT}"
 EOL
 
